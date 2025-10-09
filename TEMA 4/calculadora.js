@@ -58,7 +58,7 @@ function modulo() {
 }
 
 function forTexto() {
-    resultado.innerHTML = ``;
+    resultado.innerHTML = `<b>Bucle For: </b> <br>`;
     let n1 = getNumero1();
     for (i=1; i <= n1; i++){
         resultado.innerHTML += ` ${i}<br>`;
@@ -66,7 +66,7 @@ function forTexto() {
 }
 
 function whileTexto() {
-    resultado.innerHTML = ``;
+    resultado.innerHTML = `<b>Bucle While: </b> <br>`;
     let n1 = getNumero1();
     let i = 1;
     while (i <= n1){
@@ -76,7 +76,7 @@ function whileTexto() {
 }
 
 function doTexto() {
-    resultado.innerHTML = ``;
+    resultado.innerHTML = `<b>Bucle Do...While: </b> <br>`;
     let n1 = getNumero1();
     let i = 1;
     do{
@@ -86,7 +86,7 @@ function doTexto() {
 }
 
 function forTextoBadges() {
-    resultado.innerHTML = ``;
+    resultado.innerHTML = `<b>Bucle For Badges: </b> <br>`;
     let n1 = getNumero1();
     for (i=1; i <= n1; i++){
         resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
@@ -94,7 +94,7 @@ function forTextoBadges() {
     }
 }
 function whileTextoBadges() {
-    resultado.innerHTML = ``;
+    resultado.innerHTML = `<b>Bucle While Badges: </b> <br>`;
     let n1 = getNumero1();
     let i = 1;
     while (i <= n1){
@@ -104,7 +104,7 @@ function whileTextoBadges() {
     }
 }
 function doTextoBadges() {
-    resultado.innerHTML = ``;
+    resultado.innerHTML = `<b>Bucle Do...While Badges: </b> <br>`;
     let n1 = getNumero1();
     let i = 1;
     do{
