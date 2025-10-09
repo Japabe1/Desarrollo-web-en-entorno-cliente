@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCExpress - Empresa de Tecnología</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-desktop me-2"></i>PCExpress</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="servicios.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ordenadores.html">Ordenadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="moviles.html">Móviles</a></li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 col-lg-2 d-md-block bg-dark sidebar sidebar-" style="margin-top: 56px;">
+                <div class="position-sticky pt-3">
+                    <h6 class="sidebar-heading text-light px-3 mt-4 mb-1">Navegación</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" href="ordenadores.html"><i class="fas fa-laptop me-2 " ></i>Ordenadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="moviles.html" ><i class="fas fa-mobile-alt me-2"></i>Moviles</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="margin-top: 56px;">
+                <!-- Hero Section -->
+                <section id="inicio" class="hero bg-warning text-dark py-5 mb-5 rounded">
+                    <div class="container text-center">
+                        <h1 class="display-4 fw-bold">Bienvenido a PCExpress</h1>
+                        <p class="lead">Venta de componentes informáticos</p>
+                        <button class="btn btn-outline-dark btn-lg me-2">Comenzar</button>
+                        <button class="btn btn-outline-dark btn-lg">Saber más</button>
+                    </div>
+                </section>
+
+                <!-- Cards Section -->
+                <section id="servicios" class="mb-5">
+                    <h2 class="mb-4">Nuestros Productos</h2>
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-header bg-primary text-white text-center">
+                                    <i class="fas fa-desktop fa-3x mb-2"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Ordenadores</h5>
+                                    <p class="card-text">Conoce nuestros Ordenadores y Portatiles</p>
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary" ><a href="ordenadores.html" class="text-light">Ver más</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-header bg-success text-white text-center">
+                                    <i class="fas fa-mobile-alt fa-3x mb-2"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Móviles</h5>
+                                    <p class="card-text">Descubre nuestros amplio surtido de moviles.</p>
+                                    <div class="d-grid">
+                                        <button class="btn btn-success"><a href="moviles.html" class="text-light">Ver más</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-header bg-warning text-dark text-center">
+                                    <i class="fas fa-headphones  fa-3x mb-2"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Sonido</h5>
+                                    <p class="card-text">Encuentra todo nuestra gama de altavoces, auriculares y mucho mas.</p>
+                                    <div class="d-grid">
+                                        <button class="btn btn-warning">Ver más</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+     </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-laptop-code me-2"></i>PCExpress</h5>
+                    <p class="text-muted">Innovación tecnológica para el futuro</p>
+                    <p class="small">
+                        <i class="fas fa-map-marker-alt me-2"></i>Centro PCExpress Granada - 18014 Granada<br>
+                        <i class="fas fa-phone me-2"></i>+34 958 52 12 34<br>
+                        <i class="fas fa-envelope me-2"></i>Pcexpress@pcexpress.es
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="servicios.html" class="text-light text-decoration-none">Servicios</a></li>
+                        <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 PCExpress. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

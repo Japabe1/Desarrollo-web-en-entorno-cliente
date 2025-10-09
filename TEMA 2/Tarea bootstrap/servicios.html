@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - PCEXPress</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-desktop me-2"></i>PCExpress</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="servicios.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link active" href="ordenadores.html">Ordenadores</a></li>
+          <li class="nav-item"><a class="nav-link" href="moviles.html">Móviles</a></li>
+        </ul>
+        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#contactModal">Contactar</button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero -->
+  <section class="bg-warning text-dark py-5" style="margin-top: 56px;">
+    <div class="container text-center ">
+      <h1 class="display-4 fw-bold">Nuestros Productos y Servicios</h1>
+      <p class="lead">Venta de ordenadores, móviles, sonido y servicios de reparación con garantía.</p>
+      <div class="d-flex flex-wrap gap-2 justify-content-center">
+                        <span class="badge bg-dark text-light px-3 py-2">5 Años de Experiencia</span>
+                        <span class="badge bg-dark text-light px-3 py-2">24/7 Soporte</span>
+                    </div>
+    </div>
+  </section>
+
+  <div class="container my-5">
+
+    <!-- Services -->
+    <section class="mb-5">
+      <div class="row">
+        <!-- Ordenadores -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 shadow-lg border-0">
+            <div class="card-header bg-dark text-white text-center py-4">
+              <i class="fas fa-laptop fa-4x mb-3"></i>
+              <h4 class="mb-0">Ordenadores</h4>
+            </div>
+            <div class="card-body">
+              <p>Ordenadores de última generación para gaming, oficina y uso personal.</p>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>PC Gaming</li>
+                <li><i class="fas fa-check text-success me-2"></i>Workstations</li>
+                <li><i class="fas fa-check text-success me-2"></i>Laptops</li>
+                <li><i class="fas fa-check text-success me-2"></i>Accesorios</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#ordenadoresModal">Ver
+                Detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sonido -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 shadow-lg border-0">
+            <div class="card-header bg-primary text-white text-center py-4">
+              <i class="fas fa-headphones fa-4x mb-3"></i>
+              <h4 class="mb-0">Sonido</h4>
+            </div>
+            <div class="card-body">
+              <p>Equipos de sonido profesionales y para el hogar.</p>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>Auriculares</li>
+                <li><i class="fas fa-check text-success me-2"></i>Bocinas Bluetooth</li>
+                <li><i class="fas fa-check text-success me-2"></i>Sistemas de Home Theater</li>
+                <li><i class="fas fa-check text-success me-2"></i>Micrófonos</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#sonidoModal">Ver
+                Detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Móviles -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 shadow-lg border-0">
+            <div class="card-header bg-success text-white text-center py-4">
+              <i class="fas fa-mobile-alt fa-4x mb-3"></i>
+              <h4 class="mb-0">Móviles</h4>
+            </div>
+            <div class="card-body">
+              <p>Venta de smartphones de las mejores marcas.</p>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>iPhone</li>
+                <li><i class="fas fa-check text-success me-2"></i>Samsung</li>
+                <li><i class="fas fa-check text-success me-2"></i>Xiaomi</li>
+                <li><i class="fas fa-check text-success me-2"></i>Accesorios móviles</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#movilesModal">Ver
+                Detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seguros -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="card h-100 shadow-lg border-0">
+            <div class="card-header bg-warning text-dark text-center py-4">
+              <i class="fas fa-shield-alt fa-4x mb-3"></i>
+              <h4 class="mb-0">Seguros de Dispositivos</h4>
+            </div>
+            <div class="card-body">
+              <p>Protege tus equipos con nuestros seguros a medida.</p>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>Contra daños accidentales</li>
+                <li><i class="fas fa-check text-success me-2"></i>Robo y pérdida</li>
+                <li><i class="fas fa-check text-success me-2"></i>Extensión de garantía</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#segurosModal">Ver
+                Detalles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reparaciones -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="card h-100 shadow-lg border-0">
+            <div class="card-header bg-danger text-white text-center py-4">
+              <i class="fas fa-tools fa-4x mb-3"></i>
+              <h4 class="mb-0">Reparaciones</h4>
+            </div>
+            <div class="card-body">
+              <p>Servicio técnico especializado en reparación de ordenadores y móviles.</p>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>Reparación de pantallas</li>
+                <li><i class="fas fa-check text-success me-2"></i>Problemas de hardware</li>
+                <li><i class="fas fa-check text-success me-2"></i>Mantenimiento preventivo</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#reparacionesModal">Ver
+                Detalles</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes de Servicios -->
+    <section class="mb-5">
+      <h2 class="text-center mb-5">Planes de Seguros y Reparaciones</h2>
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card shadow border-0">
+            <div class="card-header bg-light text-center">
+              <h5>Básico</h5>
+              <h2 class="text-dark">€9<small class="text-muted">/mes</small></h2>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>1 Dispositivo</li>
+                <li><i class="fas fa-check text-success me-2"></i>Protección contra daños</li>
+                <li><i class="fas fa-times text-danger me-2"></i>Robo</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-outline-dark w-100">Elegir Plan</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card shadow border border-primary">
+            <div class="card-header bg-primary text-white text-center">
+              <h5>Estándar</h5>
+              <h2>€19<small>/mes</small></h2>
+              <span class="badge bg-warning">Más Popular</span>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>2 Dispositivos</li>
+                <li><i class="fas fa-check text-success me-2"></i>Protección contra daños</li>
+                <li><i class="fas fa-check text-success me-2"></i>Robo incluido</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-primary w-100">Elegir Plan</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card shadow border-0">
+            <div class="card-header bg-dark text-white text-center">
+              <h5>Premium</h5>
+              <h2>€29<small>/mes</small></h2>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>Dispositivos ilimitados</li>
+                <li><i class="fas fa-check text-success me-2"></i>Protección total</li>
+                <li><i class="fas fa-check text-success me-2"></i>Reemplazo inmediato</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-dark w-100">Elegir Plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+   <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-laptop me-2"></i>PCExpress</h5>
+                    <p class="text-muted">Innovación tecnológica para el futuro</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="servicios.html" class="text-light text-decoration-none">Servicios</a></li>
+                        <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Síguenos</h6>
+                    <a href="#" class="text-light me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2025 PCEXPress. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

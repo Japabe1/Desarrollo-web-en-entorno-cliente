@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 1 -- Tema 3</title>
+</head>
+<body>
+    
+    <script>
+        //Declaración variables
+        var num = 9; 
+        var cad = "hola"; 
+        var bool = true;
+        var nula = null;
+        var noDefinido; 
+        
+        //Mostrar el tipo de las variables por consola 
+        console.log("tipo number: " + typeof(num));
+        console.log("tipo string: " + typeof(cad));
+        console.log("tipo boolean: " +typeof(bool));
+        console.log("tipo null: " + nula);
+        console.log("tipo undifined: " + typeof(noDefinido));
+
+        //Conversión de tipos 
+        var cad1 = String(123);// de number a string
+        var numero = Number("123");// de string a number
+        var booleano1 = Boolean(0);//0 = false - 1 = true
+        var booleano2 = Boolean("texto");// Si tiene texto = true, string vacio = false
+        var numBool = Number(true); // true = 1, false = 0
+        var cadNull = String(null); // convierte null en "null"
+        var numUndef = Number(undefined); // undefined se convierte en NaN (Not a Number)
+
+        //Mostrar conversion de datos por consola
+        console.log("\n\nconversión number a string: " + cad1, typeof(cad1));
+        console.log("Conversión string a number: " + numero, typeof(numero));
+        console.log("Conversión number a boolean: " + booleano1, typeof(booleano1));
+        console.log("Conversión string a boolean: " + booleano2, typeof(booleano2));
+        console.log("Conversión boolean a number:", numBool, typeof(numBool));
+        console.log("Conversión null a string:", cadNull, typeof(cadNull));
+        console.log("Conversión undefined a number:", numUndef, typeof(numUndef));
+
+    </script>
+</body>
+</html>
