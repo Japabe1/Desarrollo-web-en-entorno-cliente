@@ -57,60 +57,111 @@ function modulo() {
     resultado.innerHTML = `<strong>Resultado del modulo:</strong> ${res}`;
 }
 
+// --- Bucles ---
+//Buble for
 function forTexto() {
-    resultado.innerHTML = `<b>Bucle For: </b> <br>`;
+    resultado.innerHTML = `<b>Bucle For número 1: </b> <br>`;
     let n1 = getNumero1();
     for (i=1; i <= n1; i++){
         resultado.innerHTML += ` ${i}<br>`;
     }
+    resultado.innerHTML += `<hr><b>Bucle For número 2: </b> <br>`;
+    let n2 = getNumero2();
+    for (i=1; i <= n2; i++){
+        resultado.innerHTML += ` ${i}<br>`;
+    }
 }
 
+//Bucle while
 function whileTexto() {
-    resultado.innerHTML = `<b>Bucle While: </b> <br>`;
     let n1 = getNumero1();
+    let n2 = getNumero2();
     let i = 1;
+    resultado.innerHTML = `<b>Bucle While: </b> <br>`;
     while (i <= n1){
+        resultado.innerHTML += ` ${i}<br>`;
+        i++;
+    }
+    i = 1;
+    resultado.innerHTML += `<hr><b>Bucle While número 2: </b> <br>`;
+    while (i <= n2){
         resultado.innerHTML += ` ${i}<br>`;
         i++;
     }
 }
 
+//Bucle do...while
 function doTexto() {
-    resultado.innerHTML = `<b>Bucle Do...While: </b> <br>`;
     let n1 = getNumero1();
+    let n2 = getNumero2();
     let i = 1;
+    resultado.innerHTML = `<b>Bucle Do...While: </b> <br>`;
     do{
         resultado.innerHTML += ` ${i}<br>`;
         i++;
     }while (i <= n1)
+    i = 1;
+    resultado.innerHTML += `<hr><b>Bucle Do...While número 2: </b> <br>`;
+    do{
+        resultado.innerHTML += ` ${i}<br>`;
+        i++;
+    }while (i <= n2)
 }
 
+//Bucle for con badges
 function forTextoBadges() {
-    resultado.innerHTML = `<b>Bucle For Badges: </b> <br>`;
     let n1 = getNumero1();
+    let n2 = getNumero2();
+    resultado.innerHTML = `<b>Bucle For Badges: </b> <br>`;
     for (i=1; i <= n1; i++){
         resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
-
     }
+
+    resultado.innerHTML += `<hr><b>Bucle For Badges número 2: </b> <br>`;
+    for (i=1; i <= n2; i++){
+        resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
+    }
+
 }
+
+//Bucle while con badges
 function whileTextoBadges() {
-    resultado.innerHTML = `<b>Bucle While Badges: </b> <br>`;
     let n1 = getNumero1();
+    let n2 = getNumero2();
     let i = 1;
+    resultado.innerHTML = `<b>Bucle While Badges: </b> <br>`;
     while (i <= n1){
         resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
 
         i++;
     }
+
+    i=1;
+    resultado.innerHTML += `<hr><b>Bucle While Badges número 2: </b> <br>`;
+    while (i <= n2){
+        resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
+        i++;
+    }
+
+//bucle do...while con badges
 }
 function doTextoBadges() {
-    resultado.innerHTML = `<b>Bucle Do...While Badges: </b> <br>`;
     let n1 = getNumero1();
+    let n2 = getNumero2();
     let i = 1;
+    resultado.innerHTML = `<b>Bucle Do...While Badges: </b> <br>`;
     do{
         resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
         i++;
     }while (i <= n1)
+    
+    i=1;
+    resultado.innerHTML += `<hr><b>Bucle Do...While Badges número 2: </b> <br>`;
+    do{
+        resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
+        i++;
+    }while (i <= n2)
+    
 }
 
 // Comprobar si un número es primo
