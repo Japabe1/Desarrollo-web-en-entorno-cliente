@@ -77,7 +77,7 @@ function whileTexto() {
     let n1 = getNumero1();
     let n2 = getNumero2();
     let i = 1;
-    resultado.innerHTML = `<b>Bucle While: </b> <br>`;
+    resultado.innerHTML = `<b>Bucle While número 1: </b> <br>`;
     while (i <= n1){
         resultado.innerHTML += ` ${i}<br>`;
         i++;
@@ -95,24 +95,28 @@ function doTexto() {
     let n1 = getNumero1();
     let n2 = getNumero2();
     let i = 1;
-    resultado.innerHTML = `<b>Bucle Do...While: </b> <br>`;
-    do{
-        resultado.innerHTML += ` ${i}<br>`;
-        i++;
-    }while (i <= n1)
+    resultado.innerHTML = `<b>Bucle Do...While número 1: </b> <br>`;
+    if(n1 > 0){
+        do{
+            resultado.innerHTML += ` ${i}<br>`;
+            i++;
+        }while (i <= n1)
+    }
     i = 1;
     resultado.innerHTML += `<hr><b>Bucle Do...While número 2: </b> <br>`;
-    do{
-        resultado.innerHTML += ` ${i}<br>`;
-        i++;
-    }while (i <= n2)
+    if(n2 > 0){
+        do{
+            resultado.innerHTML += ` ${i}<br>`;
+            i++;
+        }while (i <= n2)
+    }
 }
 
 //Bucle for con badges
 function forTextoBadges() {
     let n1 = getNumero1();
     let n2 = getNumero2();
-    resultado.innerHTML = `<b>Bucle For Badges: </b> <br>`;
+    resultado.innerHTML = `<b>Bucle For Badges número 1: </b> <br>`;
     for (i=1; i <= n1; i++){
         resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
     }
@@ -129,7 +133,7 @@ function whileTextoBadges() {
     let n1 = getNumero1();
     let n2 = getNumero2();
     let i = 1;
-    resultado.innerHTML = `<b>Bucle While Badges: </b> <br>`;
+    resultado.innerHTML = `<b>Bucle While Badges número 1: </b> <br>`;
     while (i <= n1){
         resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
 
@@ -149,18 +153,22 @@ function doTextoBadges() {
     let n1 = getNumero1();
     let n2 = getNumero2();
     let i = 1;
-    resultado.innerHTML = `<b>Bucle Do...While Badges: </b> <br>`;
-    do{
-        resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
-        i++;
-    }while (i <= n1)
+    resultado.innerHTML = `<b>Bucle Do...While Badges número 1: </b> <br>`;
+    if(n1 > 0){
+        do{
+            resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
+            i++;
+        }while (i <= n1)
+    }
     
     i=1;
     resultado.innerHTML += `<hr><b>Bucle Do...While Badges número 2: </b> <br>`;
-    do{
-        resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
-        i++;
-    }while (i <= n2)
+    if(n2 > 0){
+        do{
+            resultado.innerHTML += ` <span class="badge bg-primary">${i}</span>`;
+            i++;
+        }while (i <= n2)
+    }
     
 }
 
