@@ -27,20 +27,24 @@
         <!-- Botones de operaciones -->
         <div class="d-flex flex-wrap gap-2 mb-3">
             <!-- Ya hecho: botón de suma -->
-            <button class="btn btn-warning text-dark" onclick="sumar()">Sumar</button>
-            <button class="btn btn-warning text-dark" onclick="restar()">Restar</button>
-            <button class="btn btn-warning text-dark" onclick="multiplicar()">Multiplicar</button>
-            <button class="btn btn-warning text-dark" onclick="dividir()">Dividir</button>
-            <button class="btn btn-warning text-dark" onclick="potencia()">Potencia</button>
-            <button class="btn btn-warning text-dark" onclick="modulo()">Modulo</button>
-            <button class="btn btn-warning text-dark" onclick="esPrimo()">Es Primo</button>
-            <button class="btn btn-warning text-dark" onclick="calcularLogaritmo()">Logaritmo</button>
-
-            <!-- Por hacer: los alumnos deben añadir botones y funciones para:
-           Restar, Multiplicar, Dividir, Potencia, Módulo -->
+            <button class="btn btn-warning text-dark" onclick="sumar()">Sumar +</button>
+            <button class="btn btn-warning text-dark" onclick="restar()">Restar -</button>
+            <button class="btn btn-warning text-dark" onclick="multiplicar()">Multiplicar *</button>
+            <button class="btn btn-warning text-dark" onclick="dividir()">Dividir /</button>
+            <button class="btn btn-warning text-dark" onclick="potencia()">Potencia ^</button>
+            <button class="btn btn-warning text-dark" onclick="modulo()">Modulo %</button>
         </div>
 
-         <!-- Botones de operaciones -->
+        <!-- Nuevas operaciones -->
+        <div class="d-flex flex-wrap gap-2 mb-3 align-items-center">
+            <div class="d-inline-flex align-items-center">
+                <span class="badge bg-danger me-2">¡NUEVO!</span>
+            </div>
+            <button class="btn btn-warning text-dark" onclick="esPrimo()">Es Primo</button>
+            <button class="btn btn-warning text-dark" onclick="calcularLogaritmo()">Logaritmo Log</button>
+        </div>
+
+         <!-- Botones de bucles -->
         <div class="d-flex flex-wrap gap-2 mb-3">
             <!-- Ya hecho: botón de suma -->
             <button class="btn btn-success text-light" onclick="forTexto()">For (texto)</button>
