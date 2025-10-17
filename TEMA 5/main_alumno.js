@@ -145,7 +145,7 @@ btnTarea.addEventListener('click', function() {
         });
         listaTareas.appendChild(nuevaTarea);
         tareaInput.value = '';
-       
+        tareaInput.focus(); 
     }
 });
 // TODO: 3. Función para borrar tareas completadas
@@ -156,7 +156,7 @@ btnBorrarCompletadas.addEventListener('click', function() {
     tareasCompletadas.forEach(function(tarea) {
         listaTareas.removeChild(tarea);
     });
-}); 
+});
 
 /* ===================================================
    CONSEJOS PARA LOS ALUMNOS:
