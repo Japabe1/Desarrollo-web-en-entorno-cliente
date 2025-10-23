@@ -55,6 +55,10 @@ btnAdd.addEventListener('click', function() {
     contenido.appendChild(nuevoParrafo);
     aplicarHover(nuevoParrafo); // Aplicar eventos hover al nuevo párrafo
 });
+
+// TODO: 3. Crear función para el botón "Eliminar párrafo"
+//         - Buscar todos los párrafos en #contenido
+//         - Si hay párrafos, eliminar el último
 btnRemove.addEventListener('click', function() {
     const parrafos = contenido.querySelectorAll('p');
     if (parrafos.length > 0) {
@@ -62,10 +66,6 @@ btnRemove.addEventListener('click', function() {
         contenido.removeChild(ultimoparrafo);
     }
 });
-// TODO: 3. Crear función para el botón "Eliminar párrafo"
-//         - Buscar todos los párrafos en #contenido
-//         - Si hay párrafos, eliminar el último
-
 
 /* ==========================================
    TODO: Ejercicio 3 – Eventos de ratón (hover)
@@ -74,7 +74,7 @@ btnRemove.addEventListener('click', function() {
 // TODO: 1. Crear función para cuando entra el ratón
 //         - Cambiar backgroundColor a '#e7f5ff'
 function entrarRaton(event) {
-    event.target.style.backgroundColor = '#e7f5ff';
+    event.target.style.backgroundColor = '#fff9e7ff';
 }
 // TODO: 2. Crear función para cuando sale el ratón
 //         - Restaurar backgroundColor a ''
@@ -112,11 +112,14 @@ function cambiarTexto() {
     const nuevoTexto = inputNuevoTexto.value.trim();
     if(nuevoTexto === ""){
         msgError.classList.replace('d-none' , 'd-block');
+        inputNuevoTexto.focus();
     }else{
-        msgError.classList.replace('d-none' , 'd-block');
+        msgError.classList.replace('d-block' , 'd-none');
         const nuevoParrafo = contenido.querySelector('p');
         if(nuevoParrafo){
             nuevoParrafo.textContent = nuevoTexto; 
+            inputNuevoTexto.value = '';
+            inputNuevoTexto.focus();
         }
     }
 }
