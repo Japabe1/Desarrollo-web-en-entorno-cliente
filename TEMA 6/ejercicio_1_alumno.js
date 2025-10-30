@@ -515,7 +515,7 @@ function sumarConReduce() {
     suma = numeros.reduce(function(acumulador, siguienteNumero){
         return acumulador + siguienteNumero;
     },0);
-    
+
     document.getElementById("resultado-ej9").innerHTML =
         "<div class='alert alert-success'>Suma total: " + suma + "</div>";
 }
@@ -530,7 +530,7 @@ function mostrarArray(titulo, array) {
 // ===================================
 
 var biblioteca = [];
-
+var contador = 0;
 
 function agregarLibro() {
     // TODO: Obtener valores de los inputs
@@ -548,6 +548,7 @@ function agregarLibro() {
     // TODO: Crear objeto libro y agregarlo a la biblioteca
     var libro = {
         // TODO: Completar propiedades
+        id: contador++,
         titulo: titulo,
         autor: autor,
         año: parseInt(año),
@@ -626,18 +627,61 @@ function mostrarLibros(arrayLibros, alerta="") {
     } else {
         // TODO: Crear HTML para cada libro
         html = "<div class='row'>";
-        arrayLibros.forEach(function (libro) {
-            html += "<div class='col-md-4'><div class='card mb-3'><div class='card-body'>" +
-                "<h5 class='card-title'>" + libro.titulo + "</h5>" +
-                "<p class='card-text'><strong>Autor:</strong> " + libro.autor + "</p>" +
-                "<p class='card-text'><strong>Año:</strong> " + libro.año + "</p>" +
-                "<p class='card-text'><strong>Género:</strong> " + libro.genero + "</p>" +
-                "</div></div></div>";
+        arrayLibros.forEach(function (libro, index) {
+            html += `
+                <div class='col-md-4'>
+                    <div class='card mb-3'>
+                        <div class='card-body'>
+                            <h5 class='card-title text-center'>${libro.titulo}</h5>
+                            <p class='card-text'><strong>Autor:</strong> ${libro.autor}</p>
+                            <p class='card-text'><strong>Año:</strong> ${libro.año}</p>
+                            <p class='card-text'><strong>Género:</strong> ${libro.genero}</p>
+                            <button class='btn btn-warning' onclick='leerLibro(${libro.id})'>Leer</button>
+                            <button class='btn btn-danger' onclick='eliminarLibro(${libro.id})'>Eliminar</button>
+                            <button class='btn btn-danger' onclick='ModificarLibro(${libro.id})'>Modificar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
         });
         html += "</div>";   
     }
 
     document.getElementById("resultado-ej10").innerHTML = alerta + html;
+}
+
+//Funciones para los botones de leer, modificar y eliminar libro
+function leerLibro(id){
+    var libro = biblioteca.find(function(libro){
+        return libro.id === id;
+    });
+    var alerta = "<div class ='alert alert-info'><strong> Leyendo libro: " +libro.titulo +" </strong></div>"
+    if(libro){
+        mostrarLibros([libro], alerta);
+    }
+    
+}
+
+function eliminarLibro(id){
+    var indice = biblioteca.findIndex(function(libro){
+        return libro.id === id;
+    });
+    if(indice !== -1){
+        var libroEliminado = biblioteca.splice(indice, 1)[0];
+        mostrarLibros(biblioteca, "<div class ='alert alert-danger'><strong> Libro " +libroEliminado.titulo +" </strong> eliminado correctamente</div>");
+    }
+}
+function ModificarLibro(id){
+    var libro = biblioteca.find(function(libro){
+        return libro.id === id;
+    });
+    if(libro){
+        document.getElementById("libro-titulo").value = libro.titulo;
+        document.getElementById("libro-autor").value = libro.autor;
+        document.getElementById("libro-year").value = libro.año;
+        document.getElementById("libro-genero").value = libro.genero;
+        eliminarLibro(id);
+    }
 }
 
 // ===================================
