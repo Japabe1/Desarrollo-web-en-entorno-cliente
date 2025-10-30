@@ -136,7 +136,8 @@ function ordenarPorPrecio() {
     productosOrdenados.sort(function(a, b) {
         return a.precio - b.precio;
     }); 
-    mostrarProductos(productos);
+    
+    mostrarProductos(productosOrdenados);
 }
 
 function filtrarProductosCaros() {
@@ -144,6 +145,9 @@ function filtrarProductosCaros() {
     // Pista: usar el método filter()
 
     var productosCaros = []; // TODO: Implementar el filtro
+    productosCaros = productos.filter(function(producto){   
+        return producto.precio > 50;
+    }); 
     mostrarProductos(productosCaros);
 }
 
@@ -153,6 +157,17 @@ function mostrarProductos(arrayProductos) {
     
     var html = "";
     // TODO: Recorrer el array y crear HTML para cada producto
+    if (arrayProductos.length === 0) {
+        html = "<div class='alert alert-warning'>No hay productos para mostrar</div>";
+    } else {
+        html = "<h5>Catálogo de Productos:</h5><ul>";
+        arrayProductos.forEach(function (producto) {
+            html += "<li><strong>Nombre:</strong> " + producto.nombre +
+                ", <strong>Precio:</strong> " + producto.precio + "€" +
+                ", <strong>Categoría:</strong> " + producto.categoria + "</li>";
+        });
+        html += "</ul>";
+    }       
 
     document.getElementById("resultado-ej3").innerHTML = html;
 }
