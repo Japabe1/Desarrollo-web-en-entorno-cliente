@@ -556,6 +556,11 @@ function agregarLibro() {
 
         mostrarLibros(biblioteca, "<div class ='alert alert-success'><strong> Libro " +titulo +" </strong> modificado correctamente</div>" );
         // Limpiar modo edición
+        document.getElementById("libro-titulo").value = "";
+        document.getElementById("libro-autor").value = "";
+        document.getElementById("libro-year").value = "";
+        document.getElementById("libro-genero").value = "";
+        document.getElementById("libro-titulo").focus();
         modoEdicion = false;
     }
     else {
