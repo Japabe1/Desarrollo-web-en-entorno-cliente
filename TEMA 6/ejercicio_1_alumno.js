@@ -405,11 +405,12 @@ var vehiculos = [];
 function crearVehiculos() {
     // TODO: Crear varios objetos usando el constructor
     // TODO: Agregar al array vehiculos
+    vehiculos = [];
     var v1 = new Vehiculo("Toyota", "Corolla", 2020);
     var v2 = new Vehiculo("Honda", "Civic", 2021);
     var v3 = new Vehiculo("Ford", "Focus", 2019);
     vehiculos.push(v1,v2,v3);
-    mostrarInfoVehiculos();
+    document.getElementById("resultado-ej7").innerHTML = "<div class='alert alert-success'>Vehículos creados correctamente</div>";
 }
 
 function acelerarTodos() {
@@ -446,7 +447,8 @@ function crearMatriz() {
             matriz[i][j] = Math.floor(Math.random() * 10) + 1; // Números entre 1 y 10
         }
     }
-    mostrarMatriz();
+    
+    document.getElementById("resultado-ej8").innerHTML = "<div class='alert alert-success'>Matriz 3x3 creada correctamente</div>";
 }
 
 function sumarDiagonal() {
@@ -456,7 +458,7 @@ function sumarDiagonal() {
     for (var i = 0; i < 3; i++) {
         sumaDiagonal += matriz[i][i];
     }
-    document.getElementById("resultado-ej8").innerHTML +=
+    document.getElementById("resultado-ej8").innerHTML =
         "<div class='alert alert-success'>Suma diagonal principal: " + sumaDiagonal + "</div>";
 }
 
@@ -513,8 +515,8 @@ function sumarConReduce() {
     suma = numeros.reduce(function(acumulador, siguienteNumero){
         return acumulador + siguienteNumero;
     },0);
-
-    document.getElementById("resultado-ej9").innerHTML +=
+    
+    document.getElementById("resultado-ej9").innerHTML =
         "<div class='alert alert-success'>Suma total: " + suma + "</div>";
 }
 
