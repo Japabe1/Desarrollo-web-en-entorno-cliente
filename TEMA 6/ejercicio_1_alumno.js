@@ -200,7 +200,9 @@ var estudianteNotas = {
         if (this.notas.length === 0) {
             return "<div>No hay notas disponibles</div>";
         }else{
-            var sumaNotas = this.notas.reduce((acumulador, siguienteNumero) => acumulador + siguienteNumero, 0);
+            var sumaNotas = this.notas.reduce(function(acumulador, siguienteNumero) {
+                return acumulador + siguienteNumero;
+            }, 0);
         var promedio = sumaNotas / this.notas.length;
         promedio.toFixed(2);
         return promedio; // Cambiar esta línea
@@ -537,7 +539,7 @@ function agregarLibro() {
     
 
     // TODO: Validar que todos los campos estén completos
-    if(titulo.value === "" || autor.value === "" || año.value === "" || genero.value === ""){
+    if(titulo === "" || autor === "" || año === "" || genero === ""){
         document.getElementById("resultado-ej10").innerHTML = "<div class ='alert alert-success'><strong>Debes rellenar todos los campos </strong></div>" ;
         return;
     }
@@ -559,10 +561,10 @@ function agregarLibro() {
     document.getElementById("libro-titulo").focus();
 
     // TODO: Mostrar mensaje de confirmación
-    document.getElementById("resultado-ej10").innerHTML = "<div class ='alert alert-success'><strong> Libro " +libro.titulo +" </strong> añadido correctamente</div>" ;
+    var alerta = "<div class ='alert alert-success'><strong> Libro " +libro.titulo +" </strong> añadido correctamente</div>" ;
     
     // TODO: Actualizar visualización
-    mostrarBiblioteca();
+    mostrarLibros(biblioteca, alerta);
 }
 
 function mostrarBiblioteca() {
@@ -573,16 +575,10 @@ function mostrarBiblioteca() {
 function ordenarPorTitulo() {
     // TODO: Ordenar libros por título alfabéticamente
     var librosOrdenados = []; // TODO: Implementar sort
-    librosOrdenados = biblioteca.slice(); // Crear copia del array original
-    librosOrdenados.sort(function(a, b) {
-        if (a.titulo < b.titulo) {
-            return -1;
-        }
-        if (a.titulo > b.titulo) {
-            return 1;
-        }
-        return 0;
-    }); 
+    librosOrdenados = biblioteca.slice().sort(function(a,b){
+        return a.titulo.toLowerCase().localeCompare(b.titulo.toLowerCase());    
+    }); // Crear copia del array original
+    
 
     mostrarLibros(librosOrdenados);
 }
@@ -619,7 +615,7 @@ function librosRecientes() {
     mostrarLibros(recientes);
 }
 
-function mostrarLibros(arrayLibros) {
+function mostrarLibros(arrayLibros, alerta="") {
     // TODO: Mostrar libros en formato de tarjetas HTML
     var html = "";
 
@@ -639,7 +635,7 @@ function mostrarLibros(arrayLibros) {
         html += "</div>";   
     }
 
-    document.getElementById("resultado-ej10").innerHTML = html;
+    document.getElementById("resultado-ej10").innerHTML = alerta + html;
 }
 
 // ===================================
@@ -698,6 +694,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("btn-ordenar-titulo").addEventListener("click", ordenarPorTitulo);
     document.getElementById("btn-filtrar-genero").addEventListener("click", filtrarPorGenero);
     document.getElementById("btn-libros-recientes").addEventListener("click", librosRecientes);
+    document.getElementById("btn-mostrar-biblioteca").addEventListener("click", mostrarBiblioteca);
 
 });
 
