@@ -531,6 +531,8 @@ function mostrarArray(titulo, array) {
 
 var biblioteca = [];
 var contador = 0;
+var modoEdicion = false;
+var idEditar = null;
 
 function agregarLibro() {
     // TODO: Obtener valores de los inputs
@@ -545,26 +547,40 @@ function agregarLibro() {
         document.getElementById("resultado-ej10").innerHTML = "<div class ='alert alert-success'><strong>Debes rellenar todos los campos </strong></div>" ;
         return;
     }
-    // TODO: Crear objeto libro y agregarlo a la biblioteca
-    var libro = {
-        // TODO: Completar propiedades
-        id: contador++,
-        titulo: titulo,
-        autor: autor,
-        año: parseInt(año),
-        genero: genero
-    };
 
-    // TODO: Limpiar los inputs
-    biblioteca.push(libro);
-    document.getElementById("libro-titulo").value = "";
-    document.getElementById("libro-autor").value = "";
-    document.getElementById("libro-year").value = "";
-    document.getElementById("libro-genero").value = "";
-    document.getElementById("libro-titulo").focus();
+    if(modoEdicion){   
+        biblioteca[idEditar].titulo = titulo;
+        biblioteca[idEditar].autor = autor;
+        biblioteca[idEditar].año = parseInt(año);
+        biblioteca[idEditar].genero = genero;
 
-    // TODO: Mostrar mensaje de confirmación
-    var alerta = "<div class ='alert alert-success'><strong> Libro " +libro.titulo +" </strong> añadido correctamente</div>" ;
+        mostrarLibros(biblioteca, "<div class ='alert alert-success'><strong> Libro " +titulo +" </strong> modificado correctamente</div>" );
+        // Limpiar modo edición
+        modoEdicion = false;
+    }
+    else {
+
+        // TODO: Crear objeto libro y agregarlo a la biblioteca
+        var libro = {
+            // TODO: Completar propiedades
+            id: contador++,
+            titulo: titulo,
+            autor: autor,
+            año: parseInt(año),
+            genero: genero
+        };
+
+        // TODO: Limpiar los inputs
+        biblioteca.push(libro);
+        document.getElementById("libro-titulo").value = "";
+        document.getElementById("libro-autor").value = "";
+        document.getElementById("libro-year").value = "";
+        document.getElementById("libro-genero").value = "";
+        document.getElementById("libro-titulo").focus();
+
+        // TODO: Mostrar mensaje de confirmación
+        var alerta = "<div class ='alert alert-success'><strong> Libro " +libro.titulo +" </strong> añadido correctamente</div>" ;
+    }
     
     // TODO: Actualizar visualización
     mostrarLibros(biblioteca, alerta);
@@ -638,7 +654,7 @@ function mostrarLibros(arrayLibros, alerta="") {
                             <p class='card-text'><strong>Género:</strong> ${libro.genero}</p>
                             <button class='btn btn-warning' onclick='leerLibro(${libro.id})'>Leer</button>
                             <button class='btn btn-danger' onclick='eliminarLibro(${libro.id})'>Eliminar</button>
-                            <button class='btn btn-danger' onclick='ModificarLibro(${libro.id})'>Modificar</button>
+                            <button class='btn btn-info' onclick='ModificarLibro(${libro.id})'>Modificar</button>
                         </div>
                     </div>
                 </div>
@@ -680,7 +696,9 @@ function ModificarLibro(id){
         document.getElementById("libro-autor").value = libro.autor;
         document.getElementById("libro-year").value = libro.año;
         document.getElementById("libro-genero").value = libro.genero;
-        eliminarLibro(id);
+        modoEdicion = true;
+        idEditar = id ;
+        document.getElementById("resultado-ej10").innerHTML = "<div class ='alert alert-warning'><strong> Modo edición activado para el libro: " +libro.titulo +" </strong></div>" ;
     }
 }
 
