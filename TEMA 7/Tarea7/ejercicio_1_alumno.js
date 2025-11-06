@@ -108,6 +108,9 @@ document.getElementById('run-e8').addEventListener('click', function () {
   }
 
   let nombre = document.getElementById("a-e8").value;
+  if (nombre === ""){
+    nombre = undefined;
+  }
   let resultado = saludar(nombre);
   document.getElementById("out-e8").textContent = resultado;
 
@@ -117,6 +120,15 @@ document.getElementById('run-e8').addEventListener('click', function () {
 document.getElementById('run-e9').addEventListener('click', function () {
 
   // TODO: implementar función externa e interna
+  function externa(){
+    let contador = 0;
+    contador ++;
+    function interna (){
+      return contador;
+    }
+    return interna();
+  }
+  document.getElementById("out-e9").textContent = externa();
 
 });
 
