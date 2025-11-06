@@ -11,7 +11,7 @@ document.getElementById('run-e1').addEventListener('click', function () {
     return Math.sqrt(numero);
   }
 
-  var res = raizCuadrada(v);
+  let res = raizCuadrada(v);
   
 
   if(!isNaN(res)){
@@ -68,7 +68,6 @@ document.getElementById('run-e5').addEventListener('click', function () {
 document.getElementById('run-e6').addEventListener('click', function () {
 
   // TODO: define y usa esa función para devolver el resultado
-  let resultado;
   const dividir = function(a,b){
     let resultado;
     if(b === 0){
@@ -118,12 +117,13 @@ document.getElementById('run-e8').addEventListener('click', function () {
 
 });
 
+
 // Ejercicio 9 - Funciones anidadas (plantilla)
+let contador = 0;
 document.getElementById('run-e9').addEventListener('click', function () {
 
   // TODO: implementar función externa e interna
   function externa(){
-    let contador = 0;
     contador ++;
     function interna (){
       return contador;
@@ -147,7 +147,12 @@ document.getElementById('run-e10').addEventListener('click', function () {
   let random = Math.random().toFixed(4);
   let date = Date(Date.now()).toLocaleString();
 
-  let resultado = `length: ${length} | toUpperCase: ${upper} | Trim: ${cadenaTrim} | indexOf "Mundo": ${index} | Math.random: ${random} | Date.now: ${date}`;
-  document.getElementById("out-e10").textContent = resultado;
+  let resultado = `length: ${length} <br> 
+                  toUpperCase: ${upper} <br>
+                  Trim: ${cadenaTrim} <br>
+                  indexOf "Mundo": ${index} <br>
+                  Math.random: ${random} <br>
+                  Date.now: ${date}`;
+  document.getElementById("out-e10").innerHTML = resultado;
 
 });
