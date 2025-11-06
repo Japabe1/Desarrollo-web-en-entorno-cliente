@@ -145,7 +145,7 @@ document.getElementById('run-e10').addEventListener('click', function () {
   let cadenaTrim = cadenaOriginal.trim();
   let index = cadenaOriginal.indexOf("Mundo");
   let random = Math.random().toFixed(4);
-  let date = Date.now();
+  let date = Date(Date.now()).toLocaleString();
 
   let resultado = `length: ${length} | toUpperCase: ${upper} | Trim: ${cadenaTrim} | indexOf "Mundo": ${index} | Math.random: ${random} | Date.now: ${date}`;
   document.getElementById("out-e10").textContent = resultado;
