@@ -73,8 +73,10 @@ document.getElementById('run-e6').addEventListener('click', function () {
     let resultado;
     if(b === 0){
       resultado = "No se puede dividir entre 0";
+      html = resultado;
     }else{
       resultado = a / b;
+      html = `El resultado de la división es: ${resultado}`;
     }
     
     return resultado;
@@ -82,7 +84,7 @@ document.getElementById('run-e6').addEventListener('click', function () {
   let num1 = parseFloat(document.getElementById("a-e6a").value);
   let num2 = parseFloat(document.getElementById("a-e6b").value);
   resultado = dividir(num1,num2);
-  document.getElementById("out-e6").textContent = `El resultado de la división es: ${resultado}`;
+  document.getElementById("out-e6").textContent = html;
 
 });
 
