@@ -90,6 +90,12 @@ document.getElementById('run-e6').addEventListener('click', function () {
 document.getElementById('run-e7').addEventListener('click', function () {
 
   // TODO: implementa una función flecha multiplicar = 
+  const multiplicar = (a,b) => a * b;
+
+  let num1 = parseFloat(document.getElementById("a-e7a").value);
+  let num2 = parseFloat(document.getElementById("a-e7b").value);
+  let resultado = multiplicar(num1,num2);
+  document.getElementById("out-e7").textContent = `El resultado de la multiplicación es: ${resultado}`;
 
 });
 
@@ -97,6 +103,13 @@ document.getElementById('run-e7').addEventListener('click', function () {
 document.getElementById('run-e8').addEventListener('click', function () {
 
   // TODO: implementar function saludar
+  function saludar(nombre ="invitado") {
+    return `Hola, ${nombre}`;
+  }
+
+  let nombre = document.getElementById("a-e8").value;
+  let resultado = saludar(nombre);
+  document.getElementById("out-e8").textContent = resultado;
 
 });
 
