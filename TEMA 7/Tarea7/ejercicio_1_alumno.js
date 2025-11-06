@@ -35,8 +35,8 @@ document.getElementById('run-e3').addEventListener('click', function () {
   // TODO: usa new Function para construir y ejecutar una función que sume a y b
   const suma = new Function ('a','b','return a + b;');
 
-  var num1 = Number(document.getElementById("a-e3a").value);
-  var num2 = Number(document.getElementById("a-e3b").value);
+  let num1 = Number(document.getElementById("a-e3a").value);
+  let num2 = Number(document.getElementById("a-e3b").value);
   let resultado = suma(num1,num2)
   document.getElementById("out-e3").textContent = resultado;
 });
@@ -79,8 +79,8 @@ document.getElementById('run-e6').addEventListener('click', function () {
     
     return resultado;
   }
-  num1 = parseFloat(document.getElementById("a-e6a").value);
-  num2 = parseFloat(document.getElementById("a-e6b").value);
+  let num1 = parseFloat(document.getElementById("a-e6a").value);
+  let num2 = parseFloat(document.getElementById("a-e6b").value);
   resultado = dividir(num1,num2);
   document.getElementById("out-e6").textContent = `El resultado de la división es: ${resultado}`;
 
@@ -136,5 +136,16 @@ document.getElementById('run-e9').addEventListener('click', function () {
 document.getElementById('run-e10').addEventListener('click', function () {
 
   // TODO: usa los métodos nativos vistos (length, toUpperCase, trim, indexOf, Math.random, Date.now)
+  let cadenaOriginal = document.getElementById("a-e10").value;
+
+  let length = cadenaOriginal.length;
+  let upper = cadenaOriginal.toUpperCase();
+  let cadenaTrim = cadenaOriginal.trim();
+  let index = cadenaOriginal.indexOf("Mundo");
+  let random = Math.random().toFixed(4);
+  let date = Date.now();
+
+  let resultado = `length: ${length} | toUpperCase: ${upper} | Trim: ${cadenaTrim} | indexOf "Mundo": ${index} | Math.random: ${random} | Date.now: ${date}`;
+  document.getElementById("out-e10").textContent = resultado;
 
 });
