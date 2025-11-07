@@ -66,7 +66,8 @@
 					<form id="bs-form-ej3" class="row g-3">
 						<div class="col-md-6">
 							<label class="form-label">Nombre y Apellidos</label>
-							<input class="form-control" type="text" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\- ]+" title="Se aceptan mayusculas, minusculas, espacios y tildes" required>
+							<input class="form-control" type="text" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\- ]+" 
+							title="Se aceptan mayusculas, minusculas, espacios y tildes" required>
 						</div>
 						<div class="col-12">
 							<button class="btn btn-primary" type="submit">Enviar</button>
@@ -104,7 +105,8 @@
 					<form id="bs-form-ej5" class="row g-3" >
 						<div class="col-md-12">
 							<label class="form-label">Nombre y Apellidos</label>
-							<input class="form-control" type="text" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\- ]+" title="Se aceptan mayusculas, minusculas, espacios y tildes" required>
+							<input class="form-control" type="text" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\- ]+" 
+							title="Se aceptan mayusculas, minusculas, espacios y tildes" required>
 						</div>
 						<div class="col-md-6">
 							<label class="form-label">Email</label>
@@ -123,7 +125,7 @@
 							<input class="form-control" type="password" name="clave2" minlength="6", required>
 						</div>
 						<div class="col-md-6">
-							<input type="checkbox" name="terminos">
+							<input type="checkbox" name="terminos" required>
 							<label for="politica">Acepto los términos</label>
 						</div>
 						<div class="col-12">
@@ -176,7 +178,7 @@
 					const datos = {
 
 					}
-					document.getElementById("bs-msg-ej4").innerHTML = "<div class='alert alert-danger'>Rellena todos los campos</div>"
+					document.getElementById("bs-msg-ej4").innerHTML = "<div class='alert alert-danger'>Las contraseñas no son iguales</div>"
 					return;
 				}else{
 					document.getElementById("bs-msg-ej4").innerHTML = "<div class='alert alert-success'>Enviado con exito</div>"
@@ -192,7 +194,7 @@
 				const password2 = this.clave2.value.trim();
 				
 				if(password1 !== password2){
-					document.getElementById("bs-msg-ej5").innerHTML = "<div class='alert alert-danger'>Rellena todos los campos</div>"
+					document.getElementById("bs-msg-ej5").innerHTML = "<div class='alert alert-danger'>Las contraseñas no son iguales</div>"
 					return;
 				}else{
 					const datos = {
