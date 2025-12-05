@@ -74,21 +74,22 @@
     <script>
 
         //window onload
-        window.onload = function () {
+        window.addEventListener("load", function(e){
+            
             // Comprobar si la cookie existe
             const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
                 const [name, value] = cookie.split("=");
                 acc[name] = value;
                 return acc;
-            }, {});
+            },{});
             if (cookies.usuario) {
                 const nombre = decodeURIComponent(cookies.usuario);
                 // Mostrar saludo
-                alert("Bienvenido de nuevo, " + nombre + "!");
+                alert("Bienvenido de nuevo, " + nombre );
                 // Rellenar automáticamente el campo Nombre de usuario
                 document.querySelector("input[name='nombre']").value = nombre;
             }
-        };
+        });
 
         // funcion mostrar ayuda
         function mostrarAyuda(campo) {
@@ -157,15 +158,18 @@
 
             if (validoNombre && validoEmail && validoPsw && validoEdad) {
                 document.getElementById("bs-msg-ej1").innerHTML = "<div class='alert alert-success'>Formulario enviado correctamente</div>";
+                
                 if (terminos) {
                     // Crear cookie
                     document.cookie = "usuario=" + encodeURIComponent(nombre.value.trim()) + "; max-age=" + 7 * 24 * 60 * 60;
                     console.log("Cookie creada: " + document.cookie);
                 }
+                this.submit();
             } else {
                 alert("Corrige los errores en el formulario");
                 return;
             }
+
         });
 
         // Funcion eliminar cookie
