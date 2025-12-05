@@ -25,24 +25,28 @@
                         <input class="form-control" type="text" name="nombre" onfocus="mostrarAyuda('nombre')"
                             onblur="ocultarAyuda('nombre')" oninput="validar(this, 'nombre')">
                         <small id="small-nombre" class="form-small "></small>
+                        <div id="nombre"></div>
                     </div>
                     <div class="col-md-12">
                         <label class="form-label">Correo electrónico</label>
                         <input class="form-control" type="email" name="email" onfocus="mostrarAyuda('email')"
                             onblur="ocultarAyuda('email')" oninput="validar(this, 'email')">
                         <small id="small-email" class="form-small"></small>
+                        <div id="email"></div>
                     </div>
                     <div class="col-md-12">
                         <label class="form-label">Contraseña</label>
                         <input class="form-control" type="password" name="psw" onfocus="mostrarAyuda('psw')"
                             onblur="ocultarAyuda('psw')" oninput="validar(this, 'psw')">
                         <small id="small-psw" class="form-small"></small>
+                        <div id="psw"></div>
                     </div>
                     <div class="col-md-12">
                         <label class="form-label">Edad</label>
                         <input class="form-control" type="text" name="edad" onfocus="mostrarAyuda('edad')"
                             onblur="ocultarAyuda('edad')" oninput="validar(this, 'edad')">
                         <small id="small-edad" class="form-small"></small>
+                        <div id="edad"></div>
                     </div>
                     <div class="col-md-12">
                         <input type="checkbox" name="terminos">
@@ -65,8 +69,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
     <!-- JS ejercicio -->
     <script>
+
+        //window onload
+        window.onload = function () {
+            // Comprobar si la cookie existe
+            const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+                const [name, value] = cookie.split("=");
+                acc[name] = value;
+                return acc;
+            }, {});
+            if (cookies.usuario) {
+                const nombre = decodeURIComponent(cookies.usuario);
+                // Mostrar saludo
+                alert("Bienvenido de nuevo, " + nombre + "!");
+                // Rellenar automáticamente el campo Nombre de usuario
+                document.querySelector("input[name='nombre']").value = nombre;
+            }
+        };
+
+        // funcion mostrar ayuda
         function mostrarAyuda(campo) {
             const mensaje = {
                 nombre: "Introduce solo letras y espacios.",
@@ -76,13 +100,16 @@
             };
             document.getElementById("small-" + campo).textContent = mensaje[campo];
         }
+
+        // funcion ocultar ayuda
         function ocultarAyuda(campo) {
             document.getElementById("small-" + campo).textContent = "";
         }
 
+        // Funcion validar campo
         function validar(input, campo) {
             const valor = input.value.trim();
-            const small = document.getElementById("small-" + campo);
+            const msg = document.getElementById(campo);
 
             const patrones = {
                 nombre: /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/,
@@ -92,23 +119,62 @@
             };
 
             if (valor === "") {
-                small.textContent = "";
+                msg.textContent = "";
                 input.classList.remove("border-success", "border-danger");
+                return false;
             }
             else if (patrones[campo].test(valor)) {
-                small.textContent = "Correcto";
-                small.classList.remove("text-danger");
-                small.classList.add("text-success");
+                msg.textContent = "Correcto";
+                msg.classList.remove("text-danger");
+                msg.classList.add("text-success");
                 input.classList.remove("border-danger");
                 input.classList.add("border-success");
+                return true;
             } else {
-                small.textContent = "Formato incorrecto";
-                small.classList.remove("text-success");
-                small.classList.add("text-danger");
+                msg.textContent = "Formato incorrecto";
+                msg.classList.remove("text-success");
+                msg.classList.add("text-danger");
                 input.classList.remove("border-success");
                 input.classList.add("border-danger");
+                return false;
             }
         }
+
+        // Funcion submit del formulario
+        document.getElementById("bs-form-ej1").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const nombre = this.nombre;
+            const email = this.email;
+            const psw = this.psw;
+            const edad = this.edad;
+            const terminos = this.terminos.checked;
+
+            const validoNombre = validar(nombre, "nombre");
+            const validoEmail = validar(email, "email");
+            const validoPsw = validar(psw, "psw");
+            const validoEdad = validar(edad, "edad");
+
+
+            if (validoNombre && validoEmail && validoPsw && validoEdad) {
+                document.getElementById("bs-msg-ej1").innerHTML = "<div class='alert alert-success'>Formulario enviado correctamente</div>";
+                if (terminos) {
+                    // Crear cookie
+                    document.cookie = "usuario=" + encodeURIComponent(nombre.value.trim()) + "; max-age=" + 7 * 24 * 60 * 60;
+                    console.log("Cookie creada: " + document.cookie);
+                }
+            } else {
+                alert("Corrige los errores en el formulario");
+                return;
+            }
+        });
+
+        // Funcion eliminar cookie
+        function eliminarCookie() {
+            document.cookie = "usuario=; max-age=0";
+            console.log("Cookie eliminada: " + document.cookie);
+            alert("Cookie eliminada");
+        }
+
     </script>
 </body>
 
