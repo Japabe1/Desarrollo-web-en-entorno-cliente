@@ -401,7 +401,7 @@
       $("#ej5Btn").on("click", function(){
         $("#ej5Btn").prop("disabled", true);
         $("#ej5Estado").text("Estado: cargando usuarios...");
-        $("#ej5Btn").empty();
+        $("#ej5Lista").empty();
         setTimeout(function(){
           fakeUsers.forEach(function(usuario){
             $("#ej5Lista").append(`<li class="list-group-item">${usuario.nombre}, ${usuario.edad} años</li>`);
