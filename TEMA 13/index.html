@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tema 11 - Práctica jQuery (Bootstrap 5) - PLANTILLA</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (CDN) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .demo-box {
+            border: 1px dashed #adb5bd;
+            border-radius: .75rem;
+            padding: 1rem;
+            background: #f8f9fa;
+        }
+
+        .selected-li {
+            background: #e9ecef !important;
+            font-weight: 600;
+        }
+
+        .mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container py-4">
+
+        <header class="mb-4">
+            <h1 class="h3 mb-1">DWEC — Tema 13 (Typescript) </h1>
+        </header>
+
+        <div class="accordion" id="accEjercicios">
+
+            <!-- EJERCICIO 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1"
+                        aria-expanded="true" aria-controls="c1">
+                        Ejercicio 1 — Tipos básicos
+                    </button>
+                </h2>
+                <div id="c1" class="accordion-collapse collapse show" aria-labelledby="h1"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <h3 class="h6">Enunciado</h3>
+                        <p>Declara variables para representar la información de un alumno:</p>
+                        <ul>
+                            <li>Nombre del alumno (texto) .</li>
+                            <li>Edad (número).</li>
+                            <li>Si está matriculado o no (boolean).</li>
+                            <li>Lista de notas (array de números)</li>
+                            <li>Nombre del centro educativo como constante</li>
+                        </ul>
+                        <p>Muestra toda la información por consola.</p>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">Ejercicio 1 – Tipos básicos</h4>
+                            <p id="ej1Texto" class="mb-3">Este parráfo muestra los datos del alumno.</p>
+
+                            <button id="ej1Btn" class="btn btn-primary my-2" onclick="mostrarAlumno()">Aplicar
+                                cambios</button>
+                            <div id="resEje1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h2">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c2"
+                        aria-expanded="false" aria-controls="c2">
+                        Ejercicio 2 – Funciones tipadas
+                    </button>
+                </h2>
+                <div id="c2" class="accordion-collapse collapse " aria-labelledby="h2"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <h3 class="h6">Enunciado</h3>
+                        <p>Crea una función que reciba dos números y devuelva su media.</p>
+                        <ul>
+                            <li>La función debe devolver un valor de tipo number.</li>
+                            <li>Realiza una llamada correcta a la función.</li>
+                            <li>Realiza una llamada incorrecta para comprobar que TypeScript detecta el error (después
+                                coméntala).
+                            </li>
+                        </ul>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">Título original (Ejercicio 1)</h4>
+                            <p id="ej1Texto" class="mb-3">Este párrafo debe cambiar con jQuery al pulsar el botón.</p>
+                            <div class="col-md-6">
+                                <label class="form-label">Numero 1</label>
+                                <input id="eje2num1" type="number" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Numero 2</label>
+                                <input id="eje2num2" type="number" class="form-control">
+                            </div>
+                            <button id="ej2Btn" class="btn btn-primary my-2" onclick="mostrarMedia() ">Calcular
+                                Media</button>
+                            <div class="col-md-6">
+                                <label class="form-label">Resultado</label>
+                                <input id="ResEje2" type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h3">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c3"
+                        aria-expanded="false" aria-controls="c3">
+                       Ejercicio 3 – Parámetros opcionales
+                    </button>
+                </h2>
+                <div id="c3" class="accordion-collapse collapse " aria-labelledby="h3"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <h3 class="h6">Enunciado</h3>
+                        <p>Crea una función llamada saludar que:</p>
+                        <ul>
+                            <li>Reciba un nombre como parámetro opcional.</li>
+                            <li>Si se recibe el nombre, muestre Hola, 'nombre'.</li>
+                            <li>Si no se recibe, muestre Hola, invitado.</li>
+                            <li>La función no debe devolver ningún valor.</li>
+                        </ul>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">(Ejercicio 3)</h4>
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre - Opcional</label>
+                                <input id="eje3nombre" type="text" class="form-control">
+                            </div>
+
+                            <button id="ej3Btn" class="btn btn-primary my-3" onclick="mostrarSaludo()">Saludar</button>
+                            <span id="ej3Info" class="ms-2 text-secondary"></span>
+                            <div class="col-md-6">
+                                <label class="form-label">Resultado</label>
+                                <input id="ResEje3" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h4">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c4"
+                        aria-expanded="false" aria-controls="c4">
+                        Ejercicio 4 – Interfaces como tipo
+                    </button>
+                </h2>
+                <div id="c4" class="accordion-collapse collapse " aria-labelledby="h4"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <h3 class="h6">Enunciado</h3>
+                        <p>Define una interfaz llamada Producto con los siguientes campos:</p>
+                        <ul>
+                            <li>id</li>
+                            <li>nombre</li>
+                            <li>precio</li>
+                        </ul>
+                        <p>Crea una variable de tipo Producto y asígnale un objeto correcto.</p>
+                        <p>Después, intenta asignar un objeto incorrecto para comprobar que TypeScript detecta el error
+                        (comenta esa línea).</p>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">Ejercicio 4 – Interfaces como tipo</h4>
+                        
+                            <button id="ej4Btn" class="btn btn-primary my-2" onclick="mostrarProducto()">Aplicar
+                                cambios</button>
+                            <div id="resEje4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h5">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c5"
+                        aria-expanded="false" aria-controls="c5">
+                        Ejercicio 5 – Arrays de interfaces
+                    </button>
+                </h2>
+                <div id="c5" class="accordion-collapse collapse " aria-labelledby="h5"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <h3 class="h6">Enunciado</h3>
+                        <p>Utilizando la interfaz Producto:</p>
+                        <ul>
+                            <li>Crea un array con al menos tres productos.</li>
+                            <li>Recorre el array y muestra por consola el nombre y el precio de cada producto.</li>
+                            <li>Calcula y muestra el precio total de todos los productos.</li>
+                        </ul>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">Ejercicio 5 – Arrays de interfaces</h4>
+                            <button id="ej5Btn" class="btn btn-primary my-2" onclick="mostrarProductos()">Mostrar productos consola</button>
+                            <div id="resEje5"></div>
+                            <div id="resTotal"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 6 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h6">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c6"
+                        aria-expanded="false" aria-controls="c6">
+                        Ejercicio 6 – Clases y encapsulación
+                    </button>
+                </h2>
+                <div id="c6" class="accordion-collapse collapse " aria-labelledby="h6"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                            <h3 class="h6">Enunciado</h3>
+                            <p>Crea una clase Persona con:</p>
+                            <ul>
+                                <li>Una propiedad nombre pública.</li>
+                                <li>Una propiedad edad privada.</li>
+                                <li>Un constructor que inicialice ambas propiedades.</li>
+                                <li>Un método presentarse que muestre un mensaje con el nombre y la edad.</li>
+                            </ul>
+                            <p>Crea un objeto de la clase y:</p>
+                            <ul>
+                                <li>Llama al método presentarse.</li>
+                                <li>Intenta acceder a la propiedad privada desde fuera de la clase y observa el resultado.</li>
+                            </ul>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">Ejercicio 6 – Clases y encapsulación</h4>
+
+                            <button id="ej6Btn" class="btn btn-primary my-2" onclick="mostrarPresentacion()">Aplicar
+                                cambios</button>
+                            <div id="resEje6"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 7 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h7">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c7"
+                        aria-expanded="false" aria-controls="c7">
+                        Ejercicio 7 — Mostrar datos por consola
+                    </button>
+                </h2>
+                <div id="c7" class="accordion-collapse collapse " aria-labelledby="h7"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <h3 class="h6">Enunciado</h3>
+                            <p>Define una interfaz Empleado con:</p>
+                            <ul>
+                                <li>id</li>
+                                <li>nombre</li>
+                                <li>sueldoMensual</li>
+                            </ul>
+                            <p>Crea una clase EmpleadoEmpresa que implemente la interfaz y que incluya un método para calcular
+                            el sueldo anual.</p>
+                            <p>Crea un objeto de la clase y muestra el sueldo anual por consola.</p>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">Ejercicio 7 – Clases e interfaces</h4>
+
+                            <button id="ej7Btn" class="btn btn-primary my-2" onclick="mostrarEmpleado()">Aplicar
+                                cambios</button>
+                            <span id="ej1Info" class="ms-2 text-secondary"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 8 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h8">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c8"
+                        aria-expanded="false" aria-controls="c8">
+                        Ejercicio 8 – Manejo de errores
+                    </button>
+                </h2>
+                <div id="c8" class="accordion-collapse collapse " aria-labelledby="h8"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <h3 class="h6">Enunciado</h3>
+                            <p>Crea una función que:</p>
+                            <ul>
+                                <li>Reciba un número.</li>
+                                <li>Lance un error si el número es negativo.</li>
+                                <li>Devuelva el doble del número si es válido.</li>
+                            </ul>
+                            <p>Llama a la función dentro de un bloque try / catch y muestra un mensaje de error adecuado en caso
+                            de fallo.</p>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">(Ejercicio 8)</h4>
+                            <div class="col-md-6">
+                                <label class="form-label">Numero</label>
+                                <input id="eje8Num" type="number" class="form-control">
+                            </div>
+                            <button id="ej8Btn" class="btn btn-primary my-2" onclick="mostrarResultado()">Aplicar
+                                cambios</button>
+                            <div id="resultado" class="mt-3 fw-bold"></div>
+                            <span id="ej1Info" class="ms-2 text-secondary"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 9 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h9">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c9"
+                        aria-expanded="false" aria-controls="c9">
+                        Ejercicio 9 — Mostrar datos por consola
+                    </button>
+                </h2>
+                <div id="c9" class="accordion-collapse collapse " aria-labelledby="h9"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <p>Crea una función que reciba un parámetro de tipo unknown y:</p>
+                            <ul>
+                                <li>Compruebe si es un texto.</li>
+                                <li>Si lo es, lo convierta a mayúsculas y lo devuelva.</li>
+                                <li>Si no lo es, lance un error.</li>
+                            </ul>
+                        <p>Controla el error utilizando try / catch.</p>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">(Ejercicio 9)</h4>
+                            <div class="col-md-6">
+                                <label class="form-label">Texto</label>
+                                <input id="eje9Input" type="text" class="form-control">
+                            </div>
+                            <button id="ej9Btn" class="btn btn-primary my-2" onclick="ejercicio9()">Aplicar
+                                cambios</button>
+                            <div id="resultadoEje9"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EJERCICIO 10 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="h10">
+                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#c10"
+                        aria-expanded="false" aria-controls="c10">
+                        Ejercicio 10 — Mostrar datos por consola
+                    </button>
+                </h2>
+                <div id="c10" class="accordion-collapse collapse " aria-labelledby="h10"
+                    data-bs-parent="#accEjercicios">
+                    <div class="accordion-body">
+                        <p>Desarrolla una pequeña aplicación en TypeScript que permita gestionar alumnos.</p>
+                        <p>1. Define una interfaz Alumno con:</p>
+                            <ul>
+                                <li>id</li>
+                                <li>nombre</li>
+                                <li>notas (array de números)</li>
+                            </ul>
+                        <p>2. Crea una clase AlumnoApp que implemente la interfaz y que incluya:</p>
+                            <ul>
+                                <li>Un método para calcular la nota media.</li>
+                                <li>Un método que devuelva un resumen del alumno.</li>
+                            </ul>
+                        <p>3. En el programa principal:</p>
+                            <ul>
+                                <li>Crea un array de alumnos.</li>
+                                <li>Añade al menos tres alumnos.</li>
+                                <li>Muestra el resumen de cada alumno.</li>
+                                <li>Calcula y muestra la media global de todos los alumnos.</li>
+                            </ul>
+                        <div class="demo-box">
+                            <h4 id="ej1Titulo" class="h5 mb-2">(Ejercicio 10)</h4>
+
+                            <button id="ej10Btn" class="btn btn-primary my-2" onclick="mostrarResumenAlumnos()">Aplicar
+                                cambios</button>
+                            <div id="resEje10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class="mt-4 text-secondary small">
+                Recuerda: usar <span class="mono">$(document).ready(...)</span> para asegurar que el DOM está listo.
+            </footer>
+
+        </div><!-- /container -->
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="ts/ejercicio1.js"></script>
+        <script src="ts/ejercicio2.js"></script>
+        <script src="ts/ejercicio3.js"></script>
+        <script src="ts/ejercicio4.js"></script>
+        <script src="ts/ejercicio5.js"></script>
+        <script src="ts/ejercicio6.js"></script>
+        <script src="ts/ejercicio7.js"></script>
+        <script src="ts/ejercicio8.js"></script>
+        <script src="ts/ejercicio9.js"></script>
+        <script src="ts/ejercicio10.js"></script>
