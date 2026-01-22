@@ -39,7 +39,7 @@ function mostrarEmpleado(): void {
     // Limpia la consola
     console.clear();
     // Crea una nueva instancia de EmpleadoEmpresa
-    const empleado1 = new EmpleadoEmpresa(1, "Ana López", 2500);
+    const empleado1 = new EmpleadoEmpresa(1, "José Antonio", 2500);
     // Calcula y muestra el sueldo anual en la consola
     console.log(`Sueldo anual de ${empleado1.nombre}: ${empleado1.getSueldoAnual()}€`);
 }
