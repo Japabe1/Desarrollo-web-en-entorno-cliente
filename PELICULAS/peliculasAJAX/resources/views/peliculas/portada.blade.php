@@ -326,6 +326,10 @@ async function cargarTodasPeliculas() {
         const response = await fetch('/api/peliculas');
         if(!response.ok) throw new Error('Error en la respuesta de la API');
         const peliculas = await response.json();
+
+        // Esperar 1 segundo para que se vea el spinner
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
         mostrarPeliculas(peliculas, 'Todas las Películas');
     } catch(error) {
         console.error('Error al cargar las películas:', error);
@@ -347,6 +351,10 @@ async function cargarPeliculasPorCategoria() {
         const response = await fetch(`/api/categorias/${categoriaId}/peliculas`);
         if(!response.ok) throw new Error('Error al cargar las películas por categoría');
         const peliculas = await response.json();
+
+        // Esperar 1 segundo para que se vea el spinner
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
         const categoriaTexto = document.getElementById('categoriaSelect').selectedOptions[0].text;
         mostrarPeliculas(peliculas, `Películas de la categoría: ${categoriaTexto}`);
     } catch(error) {
@@ -419,6 +427,16 @@ async function abrirModalPelicula(peliculaId, nombrePelicula) {
     const modal = new bootstrap.Modal(document.getElementById('modalPelicula'));
     const modalBody = document.getElementById('modalPeliculaBody');
 
+    // Mostrar el spinner mientras carga
+    modalBody.innerHTML = `
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
+    `;
+    modal.show();
+
     try {
         const response = await fetch(`/api/peliculas/${peliculaId}`);
         if(!response.ok) throw new Error('Error al cargar los detalles');
@@ -426,6 +444,9 @@ async function abrirModalPelicula(peliculaId, nombrePelicula) {
         const pelicula = await response.json();
         const imagenPelicula = pelicula.imagen || 'https://placehold.co/300x400?text=Sin+Imagen';
         const categoriaNombre = pelicula.categoria ? pelicula.categoria.nombre : 'Sin categoría';
+
+        // Esperar 1 segundo para mostrar el spinner
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         modalBody.innerHTML = `
             <div class="row">
@@ -465,8 +486,6 @@ async function abrirModalPelicula(peliculaId, nombrePelicula) {
             </div>
         `;
     }
-
-    modal.show();
 }
 
 // Función para mostrar errores
